@@ -1,4 +1,5 @@
 import MeetupList from "../components/meetups/MeetupList";
+import Layout from '../components/layout/Layout'
 
 const meetups = [
     {
@@ -18,5 +19,9 @@ const meetups = [
 ]
 
 export default function HomePage() {
-    return <MeetupList meetups={meetups} />
+    return (
+        <Layout>
+            <MeetupList meetups={meetups} />
+        </Layout>
+    )
 }
