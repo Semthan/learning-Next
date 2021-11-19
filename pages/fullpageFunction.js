@@ -1,19 +1,23 @@
 import React from 'react'
 import ReactFullpage from "@fullpage/react-fullpage";
 import Menu from '../components/Menu'
+import Section from '../components/Section';
+import Section2 from '../components/SectionTwo';
 
 export default function fullpageFunction() {
     const fullpages = [
         {
-            text: "Section 1",
+            id: "Semthan",
         },
         {
-            text: "Section 2"
+            id: "Section 1"
         },
         {
-            text: 'Semthan',
+            id: 'Section 2',
         }
     ]
+
+    const pages = new Array(4)
 
     if (!fullpages.length) {
         return null;
@@ -24,13 +28,15 @@ export default function fullpageFunction() {
             <Menu />
             <ReactFullpage
                 navigation
+                anchors
                 //pluginWrapper={pluginWrapper}
                 // sectionsColor={this.state.sectionsColor}
                 render={comp =>
                     <ReactFullpage.Wrapper>
-                        {fullpages.map(({ text }) => (
-                            <div key={text} className="section">
-                                <h1>{text}</h1>
+                        {fullpages.map(() => (
+                            <div className="section">
+                                <Section></Section>
+                                <Section2></Section2>
                             </div>
                         ))}
                     </ReactFullpage.Wrapper>
